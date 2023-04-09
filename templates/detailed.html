@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+
+{% block content %}
+ {% if items %} 
+         <ul>
+            {% for to in items %}
+                <li>{{to.name}}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            no items
+        {% endif %}  
+{% endblock content %}

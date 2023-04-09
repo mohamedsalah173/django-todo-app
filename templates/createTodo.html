@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div style="text-align: center;">
+    {% csrf_token %}
+    <form method="POST">
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type="submit"> create </button>
+    </form>
+</div>
+
+{%endblock content%}

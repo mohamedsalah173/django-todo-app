@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-        {% if todos %}
+    {% if todos %}
         <ul>
             {% for todo in todos %}
-                <li>{{ todo.name }}</li>
+                <li> 
+                    <a href="{% url 'detailed' todo.id %}"> {{ todo.name }} </a> 
+                    <a class="btn" href="{% url 'delete' todo.id %}"> delete </a> 
+                    <a class="btn " href="{% url 'update' todo.id %}"> update </a>
+                </li>
             {% endfor %}
         </ul>
-        {% else %}
-            no todos
-        {% endif %}  
-{%endblock content%}
+        <div class="container">
+            <a href="{% url 'create' %}" class="btn btn-primary">create Todo</a>
+    
+        </div>
+    {% else %}
+        no todos
+    {% endif %}  
+{% endblock %}
+
+
