@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<body>
+  <style>
+    body{
+      background-color: beige;
+    }
+  </style>
+</body>
+<div style="color: red;" class="container mt-lg-5 p-lg-5">
+  <form class="form-group" style="font-size: large;" method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+{%endblock content%}
